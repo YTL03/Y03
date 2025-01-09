@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="R.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <div id="loadingScreen">
+            <div id="open"></div>
+        </div>
+       
+        <!--內容-->
+        <nav class="navbar">
+            <button class="menu-toggle" aria-label="Toggle menu">
+            </button>
+            <ul id="main_menu" class="menu">
+                <li><a href="RU.html">RU</a></li>
+                <li class="dropdown">
+                    <a href="ABOUT.html">ABOUT</a>
+                    <ul class="dropdown-menu">
+                    </ul>
+                </li>
+                <li><a href="ILLUSTRATION.html">ILLUSTRATION</a></li>
+                <li><a href="PHOTOGRAPHY.html">PHOTOGRAPHY</a></li>
+                <li><a href="DIGITAL DRAWING.html">DIGITAL DRAWING</a></li>
+                <li><a href="KNOCK KNOCK.html">KK</a></li>
+            </ul>
+        </nav>
+
+        <div class="box">
+            <h1>DISITAL DRAWING</h1>
+        </div>
+        
+        <div class="RU-images">
+            <a href="index.html">
+              <img src="images/未命名的作品.png" alt="index">
+            </a>
+            </div>
+
+        <div class="ILLUSTRATION">
+            <div class="ALL">
+                <div class="slider-container">
+                    <button class="prev">&#10094</button>
+                    <div class="image-slider">       
+                        <img src="images/硬要40張 奇怪餒_210617_7.png" alt="GOLDFISH ˙金魚. " onclick="openModal(this)">
+                        <img src="images/IMG_2329.JPG" alt="繪製:Procreate / 23.05.23" onclick="openModal(this)">
+                        <img src="images/08864B1E-B7A6-48F9-A514-8751B3A2FF6B.jpg" alt="" onclick="openModal(this)">
+                        <img src="images/IMG_2936.JPG" alt="繪製:Procreate / 21.05.21" onclick="openModal(this)">
+                        <img src="images/IMG_1168.JPG" alt="繪製:Procreate / 23.05.05" onclick="openModal(this)">
+                        <img src="images/IMG_2088.JPG" alt="PHYTHM ˙韻律." onclick="openModal(this)">
+                        <img src="images/IMG_1167.JPG" alt="SEA ˙海." onclick="openModal(this)">
+                        <img src="images/IMG_0786.JPG" alt="繪製:Procreate / 22.11.07" onclick="openModal(this)">
+                        <img src="images/IMG_2418.JPG" alt="繪製:Procreate / 22.08.06-22.09.10" onclick="openModal(this)">
+                        <img src="images/IMG_2419.JPG" alt="GUIMAO ˙癸卯." onclick="openModal(this)">
+                        <img src="images/IMG_2420.JPG" alt="MANNO ˙曼諾." onclick="openModal(this)">
+                    </div>
+                    <button class="next">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+          <!--modal-->
+          <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content-container">
+                <div id="caption" class="caption-text"></div> 
+                <img class="modal-content" id="modalImage"> 
+            </div>
+        </div>
+
+        <script>
+            function openModal(image) {
+    
+        const modal = document.getElementById("imageModal");
+        const modalImage = document.getElementById("modalImage");
+        const caption = document.getElementById("caption");
+
+            modal.style.display = "block";
+
+            modalImage.src = image.src;
+            caption.innerHTML = image.alt;
+        }
+        function closeModal() {
+        
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+
+        </script>    
+
+        <script>
+            window.addEventListener('scroll', function() {
+                const mainMenu = document.getElementById('main_menu');
+                if (window.scrollY > 50) { 
+                    mainMenu.classList.add('show');
+                }
+            });
+        </script>
+
+        <script>
+            window.addEventListener('load', function() {
+                var menu = document.getElementById('main_menu');
+                if (menu) {
+                    menu.classList.add('show');
+                }
+            });
+            
+            const slider = document.querySelector('.image-slider');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        
+        const moveDistance = 160; 
+
+        prevBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                left: -moveDistance,
+                behavior: 'smooth'
+            });
+        });
+
+
+        nextBtn.addEventListener('click', () => {
+            slider.scrollBy({
+                left: moveDistance,
+                behavior: 'smooth'
+            });
+        });
+        </script>
+<script src="path/to/your/script.js"></script>             
+</body>
+</html>
